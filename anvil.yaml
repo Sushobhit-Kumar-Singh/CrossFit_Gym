@@ -1,0 +1,32 @@
+allow_embedding: false
+package_name: Membership_Form
+db_schema:
+  gym:
+    client: none
+    server: full
+    columns:
+    - name: name
+      type: string
+      admin_ui: {width: 200, order: 0}
+    - name: address
+      type: string
+      admin_ui: {width: 200, order: 1}
+    - name: weight
+      type: number
+      admin_ui: {width: 200, order: 2}
+    - name: personal
+      type: bool
+      admin_ui: {width: 200, order: 3}
+    title: gym
+name: Membership Form
+startup_form: Form1
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+metadata: {title: CrossFit Gym, description: Crossfit Gym Website, logo_img: 'https://cdn.pixabay.com/photo/2023/01/28/11/08/fitness-7750665_640.png'}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/email.yml
+  client_config: {}
+  server_config: {}
